@@ -1,4 +1,4 @@
-### Book RESTful API Project
+### Book RESTful API Practice Project 
 
 Yo lads and gents,
 
