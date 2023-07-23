@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-// const helmet = require("helmet");
+const helmet = require("helmet");
 const dotenv = require("dotenv");
 const authRouter = require("./routes/author");
 const bookRouter = require("./routes/book");
@@ -14,6 +14,7 @@ dotenv.config();
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(cors());
 app.use(morgan("common"));
+app.use(helmet());
 
 mongoose.connect(process.env.MONGO_DB_SECRET_KEY);
 
