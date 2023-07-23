@@ -26,6 +26,17 @@ app.listen(PORT, () => {
   console.log(`Server is running at ${PORT}`);
 });
 
-app.get("/hello-world", (request, response) => {
-  response.status(200).json({ res: "Hello World" });
+app.get("/test", (request, response) => {
+  try {
+    response
+      .status(200)
+      .json({ status: 200, message: "Hi mom, this thing works!" });
+  } catch (error) {
+    response
+      .status(500)
+      .json({
+        status: 500,
+        message: "Oh shit, this thing has something wrong!",
+      });
+  }
 });
